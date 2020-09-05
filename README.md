@@ -28,6 +28,7 @@
 | shipping_fee_id  | integer | null: false |
 | ship_from_id     | integer | null: false |
 | shipping_date_id | integer | null: false |
+| user | references | null: false, foreign_key: true |
 
 ### Association
 
