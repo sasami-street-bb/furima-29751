@@ -24,11 +24,11 @@
 | description   | text    | null: false |
 | image         | string  | null: false |
 | price         | integer | null: false |
-| category      | string  | null: false |
-| condition     | string  | null: false |
-| shipping_fee  | string  | null: false |
-| ship_from     | string  | null: false |
-| shipping_date | string  | null: false |
+| category_id      | integer | null: false |
+| condition_id     | integer | null: false |
+| shipping_fee_id  | integer | null: false |
+| ship_from_id     | integer | null: false |
+| shipping_date_id | integer | null: false |
 
 ### Association
 
