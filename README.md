@@ -61,5 +61,5 @@
 
 ### Association
 
-- belongs_to :orders
+- belongs_to :order
 - belongs_to_active_hash :prefectur
