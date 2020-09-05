@@ -22,7 +22,6 @@
 | ------------- | ------- | ----------- |
 | name          | string  | null: false |
 | description   | text    | null: false |
-| image         | string  | null: false |
 | price         | integer | null: false |
 | category_id      | integer | null: false |
 | condition_id     | integer | null: false |
