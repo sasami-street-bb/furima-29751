@@ -15,7 +15,6 @@ class User < ApplicationRecord
 
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]{6,100}+\z/i.freeze
     validates :password,format: {with: PASSWORD_REGEX}
-    EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
-    validates_format_of :email, with: EMAIL_REGEX, uniqueness: true
+    validates :email, uniqueness: true
   end
 end
