@@ -17,4 +17,6 @@ class User < ApplicationRecord
     validates :password,format: {with: PASSWORD_REGEX}
     validates :email, uniqueness: true
   end
+
+  has_many :items
 end
