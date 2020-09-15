@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_item
+  before_action :move_to_root
 
   def index
     @order = OrderItem.new
@@ -41,6 +42,13 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def move_to_root
+    @order = Order.pluck(:item_id)
+    if @order.include?(@item.id) || @item.user_id == current_user.id
+      redirect_to root_path
+    end
   end
 
 end
