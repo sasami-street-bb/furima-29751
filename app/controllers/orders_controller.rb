@@ -9,10 +9,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  def new
-    @order = OrderItem.new
-  end
-
   def create
     @order = OrderItem.new(order_params)
     binding.pry
