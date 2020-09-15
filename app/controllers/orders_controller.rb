@@ -1,12 +1,10 @@
 class OrdersController < ApplicationController
   before_action :set_item
+  before_action :set_user
   before_action :move_to_root
 
   def index
     @order = OrderItem.new
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
   end
 
   def create
@@ -43,6 +41,12 @@ class OrdersController < ApplicationController
     @order = Order.pluck(:item_id)
     if @order.include?(@item.id) || @item.user_id == current_user.id
       redirect_to root_path
+    end
+  end
+
+  def set_user
+    unless user_signed_in?
+      redirect_to new_user_session_path
     end
   end
 
